@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #F5F5F5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none!important;
+}
+
+header {
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+}
+
+nav a img {
+    height: 80px;
+    border-right: 2px #F5F5F5 solid;
+    padding-right: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #9B9B9B;
+    margin: 0px 30px 0px 30px;
+    transition: color 0.1s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #686664;
+    text-decoration: none!important;
+}
+
+nav a.active {
+    color: #686664;
+}
+
+aside {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: right!important;
+    margin-left: 100px;
+}
+
+aside h1 {
+    color: #111;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+aside a p {
+    color: #EE4C63;
+    font-size: 12px;
+    margin: 0px;
+    text-decoration: none!important;
+}
+
+/*--- LOGIN ---*/
+main#login {
+    width: 100%;
+    height: 100vh;
+    background: #ee4d64;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section {
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    padding: 30px 30px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+section img {
+    width: 130px;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+section form strong {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+}
+
+section form input {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    height: 44px;
+    padding: 0 15px;
+    color: #444;
+    margin: 0 0 10px;
+}
+
+section form button {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #ee4d64;
+    border: none;
+    border-radius: 4px;
+    padding: 13px;
+    cursor: pointer;
+}
+section form button:hover {
+    opacity: 0.9;
+}
+
+/*--- TEACHERS ---*/
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    width: 800px;
+    height: 400px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+    border: 0px solid rgba(0,0,0,.125);
+    animation-name: up 800ms ease-out;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+section.avatar {
+    max-width: 800px;
+    height: 400px;
+    background: url(https://source.unsplash.com/collection/8969654/400) no-repeat center;
+    border-radius: 5px 0px 0px 5px;
+}
