@@ -1,0 +1,27 @@
+{
+  "name": "gympoint",
+  "version": "1.0.0",
+  "description": "Plataforma de gerenciamento de academia",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camillacorreia/gympoint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camillacorreia/gympoint/issues"
+  },
+  "homepage": "https://github.com/camillacorreia/gympoint#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
