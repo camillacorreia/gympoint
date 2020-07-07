@@ -12,7 +12,7 @@ exports.show = function(req,res) {
         return res.send("Instrutor não encontrado");
     }
 
-    return res.send(foundTeacher);
+    return res.render("teachers/show", { teacher: foundTeacher});
 }
 
 // create
@@ -25,7 +25,7 @@ exports.post = function (req, res) {
         }
     }
 
-    let { avatar_url, birth, name, gender, acting } = req.body;
+    let { avatar_url, birth, name, gender, actings } = req.body;
 
     birth = Date.parse(birth);
     const created_at = Date.now();
@@ -36,7 +36,7 @@ exports.post = function (req, res) {
         birth,
         name, 
         gender,
-        acting,
+        actings,
         created_at
     });
 

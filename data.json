@@ -5,7 +5,7 @@
       "name": "Camilla Correia",
       "birth": 966643200000,
       "gender": "F",
-      "acting": "Fitdance",
+      "actings": "Fitdance",
       "created_at": 1594147915955,
       "id": 1
     },
@@ -14,11 +14,12 @@
       "birth": 854236800000,
       "name": "Marcos Victor",
       "gender": "M",
-      "acting": [
+      "actings": [
         "Fitdance",
         "Zumba"
       ],
-      "created_at": 1594148932419
+      "created_at": 1594148932419,
+      "id": 2
     }
   ]
 }
