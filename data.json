@@ -4,8 +4,10 @@
       "avatar_url": "https://nandovieira.com.br/usando-css3-para-formatar-radio-buttons",
       "name": "Camilla Correia",
       "birth": 966643200000,
-      "gender": "F",
-      "actings": "Fitdance",
+      "gender": "Feminino",
+      "actings": [
+        "Fitdance"
+      ],
       "created_at": 1594147915955,
       "id": 1
     },
@@ -13,7 +15,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
       "birth": 854236800000,
       "name": "Marcos Victor",
-      "gender": "M",
+      "gender": "Masculino",
       "actings": [
         "Fitdance",
         "Zumba"
