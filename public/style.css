@@ -228,7 +228,8 @@ section.details {
     margin-right: 10px;
 }
 
-.details button {
+.details button,
+a.button {
     width: 100%;
     margin-top: 16px;
     font-size: 16px;
@@ -241,6 +242,14 @@ section.details {
     cursor: pointer;
     text-align: center;
 }
-.details button:hover {
+
+.details button:hover,
+a:hover.button {
     opacity: 0.9;
+}
+
+a.button {
+    text-decoration: none;
+    text-align: center;
+    display: block;
 }
