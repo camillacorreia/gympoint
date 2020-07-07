@@ -1,17 +1,24 @@
 {
   "teachers": [
     {
-      "avatar-url": "https://nandovieira.com.br/usando-css3-para-formatar-radio-buttons",
+      "avatar_url": "https://nandovieira.com.br/usando-css3-para-formatar-radio-buttons",
       "name": "Camilla Correia",
-      "birth": 792288000000,
+      "birth": 966643200000,
       "gender": "F",
+      "acting": "Fitdance",
+      "created_at": 1594147915955,
+      "id": 1
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+      "birth": 854236800000,
+      "name": "Marcos Victor",
+      "gender": "M",
       "acting": [
-        "Crossfit",
-        "Musculacao",
         "Fitdance",
         "Zumba"
       ],
-      "created_at": 1594088298356
+      "created_at": 1594148932419
     }
   ]
 }
