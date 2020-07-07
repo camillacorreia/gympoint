@@ -2,25 +2,16 @@
   "teachers": [
     {
       "avatar-url": "https://nandovieira.com.br/usando-css3-para-formatar-radio-buttons",
-      "name": "Victor Arcuri",
-      "birth": "2020-07-30",
-      "gender": "M",
-      "acting": [
-        "Crossfit",
-        "Fitdance"
-      ]
-    },
-    {
-      "avatar-url": "https://nandovieira.com.br/usando-css3-para-formatar-radio-buttons",
       "name": "Camilla Correia",
-      "birth": "2020-07-03",
+      "birth": 792288000000,
       "gender": "F",
       "acting": [
         "Crossfit",
         "Musculacao",
         "Fitdance",
         "Zumba"
-      ]
+      ],
+      "created_at": 1594088298356
     }
   ]
 }
