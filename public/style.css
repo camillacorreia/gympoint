@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --primary-color: #ee4d64;
+}
 
 body {
     background: #F5F5F5;
@@ -142,7 +145,7 @@ section form button:hover {
     background-color: white;
     border-radius: 5px;
     width: 800px;
-    height: 400px;
+    height: 100%;
     margin: 45px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -164,7 +167,81 @@ section form button:hover {
 
 section.avatar {
     max-width: 800px;
-    height: 400px;
-    background: url(https://source.unsplash.com/collection/8969654/400) no-repeat center;
+    height: 100%;
+    background: url(https://source.unsplash.com/collection/8969654/450) no-repeat center;
     border-radius: 5px 0px 0px 5px;
+}
+
+section.details {
+    max-width: 100%;
+    background: transparent;
+    padding: 20px;
+    text-align: left;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.details .item div:nth-child(1) {
+    color: #9B9B9B;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.details .item div:nth-child(2) {
+    color: #555;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.details .item span {
+    padding: 8px 16px;
+    background-color: rgba(238, 76, 99, 0.9);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.details .item input[type=url],
+.details .item input[type=date],
+.details .item input[type="name"] {   
+    border: 0px solid #000000;
+    outline: none;
+}
+
+.details .item input[type="radio"],
+.details .item input[type="checkbox"] {   
+    margin-right: 10px;
+}
+
+.details button {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #555;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 32px;
+    cursor: pointer;
+    text-align: center;
+}
+.details button:hover {
+    opacity: 0.9;
 }

@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="post" action="">
+        <section class="avatar"></section>
+        
+        <section class="details">
+            <h3>Novo instrutor</h3>
+
+            <div class="item">
+                <div>avatar URL</div>
+                <div>
+                    <input type="url" name="avatar-url" placeholder="http://">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Instrutor</div>
+                <div>
+                    <input type="name" name="name" placeholder="Nome do instrutor">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de nascimento</div>
+                <div>
+                    <input type="date" name="birth">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>
+                    <span><input type="radio" name="gender" value="M">Masculino</span>
+                    <span><input type="radio" name="gender" value="F">Femenino</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Áreas de Atuação</div>
+                <div>
+                    <span><input type="checkbox" name="acting" value="Crossfit">Crossfit</span>
+                    <span><input type="checkbox" name="acting" value="Musculacao">Musculação</span>
+                    <span><input type="checkbox" name="acting" value="Fitdance">Fitdance</span>
+                    <span><input type="checkbox" name="acting" value="Zumba">Zumba</span>
+                </div>
+            </div>
+
+            <button type="submit">Salvar</button>
+            
+        </section>
+    </form>
+
+{% endblock content %}
