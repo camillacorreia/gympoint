@@ -1,5 +1,19 @@
 const fs = require('fs');
 const data = require('./data.json');
+// show
+exports.show = function(req,res) {
+    const { id } = req.params;
+
+    const foundTeacher = data.teachers.find(function(teacher){
+        return teacher.id == id
+    });   
+
+    if (!foundTeacher) {
+        return res.send("Instrutor não encontrado");
+    }
+
+    return res.send(foundTeacher);
+}
 
 // create
 exports.post = function (req, res) {
@@ -35,4 +49,4 @@ exports.post = function (req, res) {
 
 // update
 
-//delete
+// delete
