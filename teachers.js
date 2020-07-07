@@ -12,7 +12,14 @@ exports.show = function(req,res) {
         return res.send("Instrutor não encontrado");
     }
 
-    return res.render("teachers/show", { teacher: foundTeacher});
+    const teacher = {
+        ...foundTeacher,
+        age: "",
+        gender: "",
+        created_at: ""
+    }
+
+    return res.render("teachers/show", { teacher });
 }
 
 // create
