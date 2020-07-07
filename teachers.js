@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 // create
 exports.post = function (req, res) {
     const keys = Object.keys(req.body);
@@ -8,7 +10,11 @@ exports.post = function (req, res) {
         }
     }
 
-    return res.send(req.body);
+    fs.writeFile("data.json", JSON.stringify(req.body), function(err) {
+        if (err) return res.send("Write file error");
+
+        return res.redirect("/teachers");
+    });
 };
 
 // update
