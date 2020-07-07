@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = express.Router();
+const teachers = require('./teachers');
 
 routes.get('/', (req, res) => {
     return res.render('layout');
@@ -21,17 +22,7 @@ routes.get('/teachers/create', (req, res) => {
     return res.render('teachers/create');
 });
 
-routes.post('/teachers/create', (req, res) => {
-    const keys = Object.keys(req.body);
-
-    for (key of keys) {
-        if (req.body[key] === "") {
-            return res.send('Por favor, preencha o campo')
-        }
-    }
-
-    return res.send(req.body);
-});
+routes.post('/teachers/create', teachers.post);
 
 routes.get('/students', (req, res) => {
     return res.render('students/index');
