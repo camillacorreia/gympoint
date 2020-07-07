@@ -22,7 +22,7 @@ routes.get('/teachers/create', (req, res) => {
 });
 
 routes.post('/teachers/create', (req, res) => {
-    return res.render('teachers/create');
+    return res.send(req.body);
 });
 
 routes.get('/students', (req, res) => {
