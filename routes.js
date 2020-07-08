@@ -2,6 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const teachers = require('./controllers/teachers');
 const students = require('./controllers/students');
+const plans = require('./controllers/plans');
 
 routes.get('/', (req, res) => {
     return res.render('login');
@@ -22,5 +23,7 @@ routes.get('students/:id/edit', students.edit);
 routes.post('/students', students.post);
 routes.put('/students', students.put);
 routes.delete('/students', students.delete);
+
+routes.get('/plans', plans.index);
 
 module.exports = routes;
