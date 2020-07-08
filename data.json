@@ -2,86 +2,14 @@
   "teachers": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 966643200000,
-      "name": "Camilla Correia",
-      "gender": "Feminino",
-      "actings": [
-        "Musculação",
-        "Fitdance",
-        "Zumba"
-      ],
-      "created_at": 1594172382347,
-      "id": 1
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 854236800000,
-      "name": "Marcos Victor",
-      "gender": "Masculino",
-      "actings": [
-        "Crossfit",
-        "Musculação"
-      ],
-      "created_at": 1594172412846,
-      "id": 2
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 714960000000,
-      "name": "Victor Arcuri",
-      "gender": "Masculino",
-      "actings": [
-        "Crossfit",
-        "Musculação",
-        "Fitdance",
-        "Zumba"
-      ],
-      "created_at": 1594175428169,
-      "id": 3
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
       "birth": 173750400000,
       "name": "Gineide Jesus Leite",
       "gender": "Feminino",
       "actings": [
-        "Zumba"
-      ],
-      "created_at": 1594176789693,
-      "id": 4
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 1435190400000,
-      "name": "Camilla Correia",
-      "gender": "Feminino",
-      "actings": [
-        "Musculação"
-      ],
-      "created_at": 1594178885462,
-      "id": 5
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 1435190400000,
-      "name": "Camila Pitanga",
-      "gender": "Feminino",
-      "actings": [
-        "Musculação"
-      ],
-      "created_at": 1594179170884,
-      "id": 6
-    },
-    {
-      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-      "birth": 944352000000,
-      "name": "Victor Arcuri",
-      "gender": "Masculino",
-      "actings": [
         "Crossfit"
       ],
-      "created_at": 1594180723947,
-      "id": "7"
+      "created_at": 1594221253923,
+      "id": 1
     }
   ]
 }

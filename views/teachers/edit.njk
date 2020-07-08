@@ -2,13 +2,16 @@
 
 {% block content %}
 
-    <form class="card" method="post" action="/teachers?_method=put">
-        <section 
-            class="avatar"
-            style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover">
-        </section>
-        
-        <section class="details">
+<div class="card">
+    
+    <section 
+        class="avatar"
+        style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover">
+    </section>
+
+    <section class="details">
+
+        <form method="post" action="/teachers?_method=put">
             <h3>Editar instrutor</h3>
 
             {%  include 'teachers/fields.njk' %}
@@ -18,8 +21,15 @@
                 name="id"
                 value={{teacher.id}}
             >
-            
-        </section>
-    </form>
+        </form>
+
+        <form id="form-delete" action="/teachers?_method=delete" method="post">
+            <input type="hidden" name="id" value="{{teacher.id}}">
+            <button type="submit">Deletar</button>
+        </form>
+
+    </section>
+    
+</div>
 
 {% endblock content %}
