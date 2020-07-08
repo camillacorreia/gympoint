@@ -1,39 +1,114 @@
 <div class="item">
     <div>avatar URL</div>
     <div>
-        <input type="url" name="avatar_url" placeholder="http://">
+        <input
+            type="url"
+            name="avatar_url"
+            placeholder="http://"
+            value="{{ teacher.avatar_url }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Instrutor</div>
     <div>
-        <input type="name" name="name" placeholder="Nome do instrutor">
+        <input
+            type="name"
+            name="name"
+            placeholder="Nome do instrutor"
+            value="{{ teacher.name }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Data de nascimento</div>
     <div>
-        <input type="date" name="birth">
+        <input
+            type="date"
+            name="birth"
+            value="{{ teacher.birth }}"
+        >
     </div>
 </div>
 
 <div class="item">
     <div>Sexo</div>
     <div>
-        <span><input type="radio" name="gender" value="Masculino">Masculino</span>
-        <span><input type="radio" name="gender" value="Feminino">Feminino</span>
+        <span>
+            <input 
+                type="radio"
+                name="gender"
+                value="Masculino"
+                {% if teacher.gender == 'Masculino' %}
+                    checked
+                {% endif %}>Masculino
+        </span>
+        <span>
+            <input 
+                type="radio"
+                name="gender"
+                value="Feminino"
+                {% if teacher.gender == 'Feminino' %}
+                    checked
+                {% endif %}>Feminino
+        </span>
     </div>
 </div>
 
 <div class="item">
     <div>Áreas de Atuação</div>
+    
     <div>
-        <span><input type="checkbox" name="actings" value="Crossfit">Crossfit</span>
-        <span><input type="checkbox" name="actings" value="Musculacao">Musculação</span>
-        <span><input type="checkbox" name="actings" value="Fitdance">Fitdance</span>
-        <span><input type="checkbox" name="actings" value="Zumba">Zumba</span>
+        <span>
+            <input
+                type="checkbox"
+                name="actings"
+                value="Crossfit"
+                {% for acting in teacher.actings %}
+                    {% if acting == 'Crossfit' %}
+                        checked
+                    {% endif %}
+                {% endfor %}
+                >Crossfit
+        </span>
+        <span>
+            <input
+                type="checkbox"
+                name="actings"
+                value="Musculação"
+                {% for acting in teacher.actings %}
+                    {% if acting == 'Musculação' %}
+                        checked
+                    {% endif %}
+                {% endfor %}
+                >Musculação
+        </span>
+        <span>
+            <input
+                type="checkbox"
+                name="actings"
+                value="Fitdance"
+                {% for acting in teacher.actings %}
+                    {% if acting == 'Fitdance' %}
+                        checked
+                    {% endif %}
+                {% endfor %}
+                >Fitdance
+        </span>
+        <span>
+            <input
+                type="checkbox"
+                name="actings"
+                value="Zumba"
+                {% for acting in teacher.actings %}
+                    {% if acting == 'Zumba' %}
+                        checked
+                    {% endif %}
+                {% endfor %}
+                >Zumba
+        </span>
     </div>
 </div>
 

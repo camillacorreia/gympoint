@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./data.json');
-const { age } = require('./utils');
+const { age, date } = require('./utils');
 
 // show
 exports.show = function(req,res) {
@@ -45,7 +45,8 @@ exports.post = function (req, res) {
         name, 
         gender,
         actings,
-        created_at
+        created_at,
+        id
     });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
@@ -55,6 +56,24 @@ exports.post = function (req, res) {
     });
 };
 
-// update
+// editar
+exports.edit = function (req, res) {
+    const { id } = req.params;
+
+    const foundTeacher = data.teachers.find(function(teacher){
+        return teacher.id == id
+    });   
+
+    if (!foundTeacher) {
+        return res.send("Instrutor não encontrado");
+    }
+
+    const teacher = {
+        ...foundTeacher,
+        birth: date(foundTeacher.birth)
+    }
+
+    return res.render('teachers/edit', { teacher });
+}
 
 // delete
