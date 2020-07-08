@@ -10,6 +10,32 @@
       ],
       "created_at": 1594221253923,
       "id": 1
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+      "birth": 966643200000,
+      "name": "Camilla Correia",
+      "gender": "Feminino",
+      "actings": [
+        "Crossfit",
+        "Musculação",
+        "Fitdance",
+        "Zumba"
+      ],
+      "created_at": 1594222839734,
+      "id": 2
+    },
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+      "birth": 887500800000,
+      "name": "Victor Arcuri",
+      "gender": "Masculino",
+      "actings": [
+        "Crossfit",
+        "Fitdance"
+      ],
+      "created_at": 1594239305582,
+      "id": 3
     }
   ]
 }

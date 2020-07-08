@@ -2,44 +2,26 @@
 
 {% block content %}
 
-    <div class="card">
-        <section 
-            class="avatar"
-            style="background: url(https://source.unsplash.com/collection/8969654/400) no-repeat center center / cover">
-        </section>
-        
-        <section class="details">
-            <h3>Detalhes</h3>
-
-            <div class="item">
-                <div>Instrutor</div>
-                <div>Guilherme Saraiva</div>
-            </div>
-
-            <div class="item">
-                <div>Idade</div>
-                <div>29</div>
-            </div>
-
-            <div class="item">
-                <div>Sexo</div>
-                <div>Masculino</div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    <span>Musculação</span>
-                    <span>Crossfit</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Desde</div>
-                <div>15/04/2019</div>
-            </div>
-            
-        </section>
+    <div class="card table-container">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Instrutor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                <tr>
+                    <td>    
+                        <span style="background-image: url({{teacher.avatar_url}})"></span>
+                        {{teacher.name}}
+                    </td>
+                    <td><a href="/teachers/{{teacher.id}}">ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock content %}
