@@ -1,0 +1,121 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="post" action="/students">
+        <section 
+            class="avatar"
+            style="background: url(https://source.unsplash.com/collection/8969654/400) no-repeat center center / cover">
+        </section>
+        
+        <section class="details">
+            <h3>Novo aluno</h3>
+
+            <div class="item">
+                <div>Avatar URL</div>
+                <div>
+                    <input type="url" name="avatar_url" placeholder="http://">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Aluno</div>
+                <div>
+                    <input type="name" name="name" placeholder="Nome Completo">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Endereço</div>
+                <div>
+                    <input type="text" name="adress">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Telefone</div>
+                <div>
+                    <input type="number" name="number">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>
+                    <input type="email" name="email">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de nascimento</div>
+                <div>
+                    <input type="date" name="birth">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>
+                    <span><input type="radio" name="gender" value="Masculino">Masculino</span>
+                    <span><input type="radio" name="gender" value="Feminino">Feminino</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Tipo Sanguíneo</div>
+                <div>
+                    <select name="blood">
+                        <option value="NI">Não identificado</option>
+                        <option value="A1">A+</option>
+                        <option value="A0">A-</option>
+                        <option value="B1">B+</option>
+                        <option value="B0">B-</option>
+                        <option value="AB1">AB+</option>
+                        <option value="AB0">AB-</option>
+                        <option value="O1">O+</option>
+                        <option value="O0">O-</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Peso (kg)</div>
+                <div>
+                    <input type="number" name="weight">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Altura (cm)</div>
+                <div>
+                    <input type="number" name="height">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Plano</div>
+                <div>
+                    <span class="gold"><input type="radio" name="plan" value="gold">Gold</span>
+                    <span class="silver"><input type="radio" name="plan" value="silver">Silver</span>
+                    <span class="black"><input type="radio" name="plan" value="black">Black</span>
+                </div>
+                
+                <div>Validade</div>
+                <div>
+                    <input type="date" name="validity">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>
+                    <span class="activated"><input type="radio" name="register" value="activated">Ativado</span>
+                    <span class="disabled"><input type="radio" name="register" value="disabled">Desativado</span>
+                </div>
+            </div>
+
+            <button type="submit">Salvar</button>
+            
+        </section>
+    </form>
+
+{% endblock content %}

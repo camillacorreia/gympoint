@@ -201,6 +201,13 @@ section.details {
     line-height: 24px;
 }
 
+.details div.item div {
+    color: #9B9B9B;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
 .details .item div:nth-child(2) {
     color: #555;
     font-weight: bold;
@@ -217,9 +224,63 @@ section.details {
     display: inline-block;
 }
 
+.details .item span.gold {
+    padding: 8px 16px;
+    background-color: rgba(218, 165, 32, 0.9);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.details .item span.silver {
+    padding: 8px 16px;
+    background-color: rgba(192, 192, 192, 0.9);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.details .item span.black {
+    padding: 8px 16px;
+    background-color: rgba(1, 1, 1, 0.9);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.details .item span.activated{
+    padding: 8px 16px;
+    background-color: rgba(0, 128, 0, 0.7);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.details .item span.disabled{
+    padding: 8px 16px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 5px;
+    color: white;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
 .details .item input[type=url],
 .details .item input[type=date],
-.details .item input[type="name"] {   
+.details .item input[type="name"],
+.details .item input[type="text"],
+.details .item input[type="number"],
+.details .item input[type="email"],
+.details .item select {   
     border: 0px solid #000000;
     outline: none;
     width: 100%;
