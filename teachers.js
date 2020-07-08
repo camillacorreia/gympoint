@@ -39,6 +39,8 @@ exports.post = function (req, res) {
     const created_at = Date.now();
     const id = Number(data.teachers.length + 1);
 
+    actings = [].concat(actings);
+
     data.teachers.push({
         avatar_url,
         birth,
@@ -49,10 +51,11 @@ exports.post = function (req, res) {
         id
     });
 
+
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send("Write file error");
 
-        return res.redirect("/teachers");
+        return res.redirect(`/teachers/${id}`);
     });
 };
 
@@ -70,10 +73,40 @@ exports.edit = function (req, res) {
 
     const teacher = {
         ...foundTeacher,
-        birth: date(foundTeacher.birth)
+        birth: date(foundTeacher.birth),
     }
 
     return res.render('teachers/edit', { teacher });
-}
+};
 
-// delete
+// put
+exports.put = function (req, res) {
+    const { id } = req.body;
+    let index = 0;
+
+    const foundTeacher = data.teachers.find(function(teacher, foundIndex){
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    });   
+
+    if (!foundTeacher) {
+        return res.send("Instrutor não encontrado");
+    };
+
+    const teacher = {
+        ...foundTeacher,
+        ...req.body,
+        actings: [].concat(req.body.actings),
+        birth: Date.parse(req.body.birth)
+    };
+
+    data.teachers[index] = teacher;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send("Write file error");
+
+        return res.redirect(`/teachers/${id}`)
+    });
+};
