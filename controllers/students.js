@@ -22,7 +22,6 @@ exports.show = function(req,res) {
 
     const student = {
         ...foundStudent,
-        age: age(foundStudent.birth), 
         created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudent.created_at),
     }
 
@@ -44,22 +43,46 @@ exports.post = function (req, res) {
         }
     }
 
-    let { avatar_url, birth, name, gender, actings } = req.body;
+    let {
+        avatar_url,
+        name,
+        adress,
+        number,
+        email,
+        birth,
+        gender, 
+        blood,
+        weight,
+        height,
+        plan,
+        register
+    } = req.body;
 
     birth = Date.parse(birth);
     const created_at = Date.now();
-    const id = Number(data.students.length + 1);
 
-    actings = [].concat(actings);
+    let id = 1;
+    const lastStudent = data.students[data.students.length - 1];
+
+    if (lastStudent) {
+        id = lastStudent.id + 1;
+    }
 
     data.students.push({
+        id,
         avatar_url,
+        name,
+        adress,
+        number,
+        email,
         birth,
-        name, 
-        gender,
-        actings,
-        created_at,
-        id
+        gender, 
+        blood,
+        weight,
+        height,
+        plan,
+        register,
+        created_at
     });
 
 

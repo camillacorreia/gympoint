@@ -1,5 +1,22 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+      "name": "Gineide Jesus Leite",
+      "adress": "Rua Ministro Pacheco de Oliveira",
+      "number": "982728695",
+      "email": "gineidejl@gmail.com",
+      "birth": 173750400000,
+      "gender": "Feminino",
+      "blood": "O1",
+      "weight": "98",
+      "height": "150",
+      "plan": "gold",
+      "register": "activated",
+      "created_at": 1594259717372
+    }
+  ],
   "teachers": [
     {
       "avatar_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",

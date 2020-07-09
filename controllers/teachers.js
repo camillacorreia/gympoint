@@ -52,13 +52,13 @@ exports.post = function (req, res) {
     actings = [].concat(actings);
 
     data.teachers.push({
+        id,
         avatar_url,
         birth,
         name, 
         gender,
         actings,
-        created_at,
-        id
+        created_at
     });
 
 

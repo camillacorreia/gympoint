@@ -201,13 +201,6 @@ section.details {
     line-height: 24px;
 }
 
-.details div.item div {
-    color: #9B9B9B;
-    font-size: 14px;
-    line-height: 24px;
-    margin-top: 10px;
-}
-
 .details .item div:nth-child(2) {
     color: #555;
     font-weight: bold;
@@ -217,36 +210,6 @@ section.details {
 .details .item span {
     padding: 8px 16px;
     background-color: rgba(238, 76, 99, 0.9);
-    border-radius: 5px;
-    color: white;
-    margin-right: 4px;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-.details .item span.gold {
-    padding: 8px 16px;
-    background-color: rgba(218, 165, 32, 0.9);
-    border-radius: 5px;
-    color: white;
-    margin-right: 4px;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-.details .item span.silver {
-    padding: 8px 16px;
-    background-color: rgba(192, 192, 192, 0.9);
-    border-radius: 5px;
-    color: white;
-    margin-right: 4px;
-    margin-top: 8px;
-    display: inline-block;
-}
-
-.details .item span.black {
-    padding: 8px 16px;
-    background-color: rgba(1, 1, 1, 0.9);
     border-radius: 5px;
     color: white;
     margin-right: 4px;
