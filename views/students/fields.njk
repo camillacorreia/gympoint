@@ -5,7 +5,7 @@
             type="url"
             name="avatar_url"
             placeholder="http://"
-            value="{{ teacher.avatar_url }}"
+            value="{{ student.avatar_url }}"
         >
     </div>
 </div>
@@ -17,7 +17,40 @@
             type="name"
             name="name"
             placeholder="Nome do instrutor"
-            value="{{ teacher.name }}"
+            value="{{ student.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Endereço</div>
+    <div>
+        <input
+            type="text"
+            name="adress"
+            value="{{ student.adress }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Telefone</div>
+    <div>
+        <input
+            type="number"
+            name="number"
+            value="{{ student.number }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <div>
+        <input
+            type="email"
+            name="email"
+            value="{{ student.email }}"
         >
     </div>
 </div>
@@ -28,7 +61,7 @@
         <input
             type="date"
             name="birth"
-            value="{{ teacher.birth }}"
+            value="{{ student.birth }}"
         >
     </div>
 </div>
@@ -41,7 +74,7 @@
                 type="radio"
                 name="gender"
                 value="Masculino"
-                {% if teacher.gender == 'Masculino' %}
+                {% if student.gender == 'Masculino' %}
                     checked
                 {% endif %}>Masculino
         </span>
@@ -50,7 +83,7 @@
                 type="radio"
                 name="gender"
                 value="Feminino"
-                {% if teacher.gender == 'Feminino' %}
+                {% if student.gender == 'Feminino' %}
                     checked
                 {% endif %}>Feminino
         </span>
@@ -58,56 +91,119 @@
 </div>
 
 <div class="item">
-    <div>Áreas de Atuação</div>
-    
+    <div>Tipo Sanguíneo</div>
     <div>
-        <span>
+        <select name="blood">
+            <option
+                value="NI"
+                {% if student.blood == 'NI' %}
+                    selected
+                {% endif %}>Não indentificado
+            </option>
+            <option
+                value="A+"
+                {% if student.blood == 'A+' %}
+                    selected
+                {% endif %}>A+
+            </option>
+            <option
+                value="A-"
+                {% if student.blood == 'A+' %}
+                    selected
+                {% endif %}>A-
+            </option>
+            <option
+                value="B+"
+                {% if student.blood == 'B+' %}
+                    selected
+                {% endif %}>B+
+            </option>
+            <option
+                value="B-"
+                {% if student.blood == 'B-' %}
+                    selected
+                {% endif %}>B-
+            </option>
+            <option
+                value="AB+"
+                {% if student.blood == 'AB+' %}
+                    selected
+                {% endif %}>AB+
+            </option>
+            <option
+                value="AB-"
+                {% if student.blood == 'AB-' %}
+                    selected
+                {% endif %}>AB-
+            </option>
+            <option
+                value="O+"
+                {% if student.blood == 'O+' %}
+                    selected
+                {% endif %}>O+
+            </option>
+            <option
+                value="O-"
+                {% if student.blood == 'O-' %}
+                    selected
+                {% endif %}>O-
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Peso (kg)</div>
+    <div>
+        <input
+            type="number"
+            name="weight"
+            value="{{ student.weight }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Altura (cm)</div>
+    <div>
+        <input
+            type="number"
+            name="height"
+            value="{{ student.height }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Plano</div>
+    <div>
+        <select name="plan">
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="black">Black</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        <span class="activated">
             <input
-                type="checkbox"
-                name="actings"
-                value="Crossfit"
-                {% for acting in teacher.actings %}
-                    {% if acting == 'Crossfit' %}
-                        checked
-                    {% endif %}
-                {% endfor %}
-                >Crossfit
+                type="radio"
+                name="register"
+                value="ATIVO"
+                {% if student.register == 'ATIVO' %}
+                    checked
+                {% endif %}>ATIVO
         </span>
-        <span>
+        <span class="disabled">
             <input
-                type="checkbox"
-                name="actings"
-                value="Musculação"
-                {% for acting in teacher.actings %}
-                    {% if acting == 'Musculação' %}
-                        checked
-                    {% endif %}
-                {% endfor %}
-                >Musculação
-        </span>
-        <span>
-            <input
-                type="checkbox"
-                name="actings"
-                value="Fitdance"
-                {% for acting in teacher.actings %}
-                    {% if acting == 'Fitdance' %}
-                        checked
-                    {% endif %}
-                {% endfor %}
-                >Fitdance
-        </span>
-        <span>
-            <input
-                type="checkbox"
-                name="actings"
-                value="Zumba"
-                {% for acting in teacher.actings %}
-                    {% if acting == 'Zumba' %}
-                        checked
-                    {% endif %}
-                {% endfor %}
-                >Zumba
+                type="radio"
+                name="register"
+                value="DESATIVADO"
+                {% if student.register == 'DESATIVADO' %}
+                    checked
+                {% endif %}>DESATIVADO
         </span>
     </div>
 </div>

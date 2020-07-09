@@ -103,12 +103,12 @@ exports.edit = function (req, res) {
     });   
 
     if (!foundStudent) {
-        return res.send("Instrutor não encontrado");
+        return res.send("Aluno não encontrado");
     }
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth),
+        birth: date(foundStudent.birth).iso,
     }
 
     return res.render('students/edit', { student });

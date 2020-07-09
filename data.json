@@ -9,12 +9,15 @@
       "email": "gineidejl@gmail.com",
       "birth": 173750400000,
       "gender": "Feminino",
-      "blood": "O+",
-      "weight": "98",
+      "blood": "AB-",
+      "weight": "84",
       "height": "150",
       "plan": "gold",
       "register": "ATIVO",
-      "created_at": 1594259717372
+      "created_at": 1594259717372,
+      "actings": [
+        null
+      ]
     }
   ],
   "teachers": [
