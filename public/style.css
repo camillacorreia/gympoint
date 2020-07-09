@@ -294,9 +294,11 @@ table {
 }
 
 .table-container {
-    display: block;
+    display: flex;
     padding: 40px;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
 }
 
 .table-container table {
@@ -352,7 +354,7 @@ tbody tr td:last-child a,
 .table-container > a {
     margin-bottom: 8px;
     display: inline-block;
-    float: right;
+    text-align: center;
 }
 
 tbody tr td:last-child a:hover,
@@ -363,4 +365,9 @@ tbody tr td:last-child a:hover,
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
+}
+
+.table-container tbody td {
+    font-size: 18px;
+    color: #555;
 }
