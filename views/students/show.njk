@@ -1,0 +1,80 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section 
+            class="avatar"
+            style="background: url({{ student.avatar_url }}) no-repeat center center / cover">
+        </section>
+        
+        <section class="details">
+            <h3>Detalhes</h3>
+
+            <div class="item">
+                <div>Aluno</div>
+                <div>{{ student.name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Aniversário</div>
+                <div>{{ student.birth }}</div>
+
+            </div>
+
+            <div class="item">
+                <div>Endereço</div>
+                <div>{{ student.adress }}</div>
+
+            </div>
+
+            <div class="item">
+                <div>Telefone</div>
+                <div>{{ student.number }}</div>
+
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{ student.gender }}</div>
+            </div>
+
+            <div class="item">
+                <div>Tipo Sanguíneo</div>
+                <div>{{ student.blood }}</div>
+            </div>
+
+            <div class="item">
+                <div>Peso (kg)</div>
+                <div>{{ student.weight }}</div>
+            </div>
+
+            <div class="item">
+                <div>Altura (cm)</div>
+                <div>{{ student.height }}</div>
+            </div>
+
+            <div class="item">
+                <div>Plano</div>
+                <div>{{ student.plan }}</div>
+            </div>
+
+            <div class="item">
+                <div class="register">{{ student.register }}</div>
+            </div>
+
+            <div class="item">
+                <div>Data do Cadastro</div>
+                <div>{{ student.created_at }}</div>
+            </div>
+            
+        </section>
+    </div>
+
+{% endblock content %}

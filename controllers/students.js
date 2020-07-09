@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('../data.json');
-const { age, date } = require('../utils');
+const { date } = require('../utils');
 
 //index
 exports.index  = function(req, res) {
@@ -22,7 +22,8 @@ exports.show = function(req,res) {
 
     const student = {
         ...foundStudent,
-        created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudent.created_at),
+        birth: date(foundStudent.birth).birthDay,
+        created_at: date(foundStudent.created_at).created,
     }
 
     return res.render("students/show", { student });
