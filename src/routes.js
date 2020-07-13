@@ -1,8 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const teachers = require('./controllers/teachers');
-const students = require('./controllers/students');
-const plans = require('./controllers/plans');
+const teachers = require('./app/controllers/teachers');
+const students = require('./app/controllers/students');
+const plans = require('./app/controllers/plans');
 
 routes.get('/', (req, res) => {
     return res.render('login');
