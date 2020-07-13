@@ -1,4 +1,5 @@
 const Teacher = require('../models/teacher');
+const { age, date } = require('../../lib/utils');
 
 module.exports = {
     index(req, res){
@@ -13,7 +14,7 @@ module.exports = {
     create(req, res) {
 
         return res.render('teachers/create');
-        
+
     },
     post(req, res) {
 
@@ -31,6 +32,14 @@ module.exports = {
 
     },
     show(req, res) {
+        Teacher.find(req.params.id, function(teacher){
+            if (!teacher) return res.send("Instrutor não encontrado!")
+
+            teacher.age = age(teacher.birth);
+            teacher.created_at = date(teacher.created_at).created;
+
+            return res.render("teachers/show", { teacher });
+        });
 
     },
     edit(req, res) {

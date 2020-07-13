@@ -27,15 +27,26 @@ module.exports = {
             data.avatar_url,
             data.name,
             data.gender,
-            data.actings,
+            [].concat(data.actings),
             date(data.birth).iso,
             date(Date.now()).iso,
         ]
 
         db.query(query, values, function(err, results) {
-            if(err) return console.log(err);
+            if(err) return res.send("Database Error!");
 
             callback(results.rows[0]);
         });
+    },
+
+    find(id, callback) {
+        db.query(`
+            SELECT *
+            FROM teachers
+            WHERE id = $1`, [id], function(err, results) {
+                if(err) return res.send("Database Error!");
+
+                callback(results.rows[0]);
+        })
     }
 }
