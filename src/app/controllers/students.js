@@ -1,42 +1,14 @@
-const fs = require('fs');
-const data = require('../data.json');
-const { date } = require('../utils');
+const { age, date } = require('../../lib/utils');
 
-//index
-exports.index  = function(req, res) {
-
-    return res.render("students/index", { students: data.students });
-};
-
-// show
-exports.show = function(req,res) {
-    const { id } = req.params;
-
-    const foundStudent = data.students.find(function(student){
-        return student.id == id
-    });   
-
-    if (!foundStudent) {
-        return res.send("Instrutor não encontrado");
-    }
-
-    const student = {
-        ...foundStudent,
-        birth: date(foundStudent.birth).birthDay,
-        created_at: date(foundStudent.created_at).created,
-    }
-
-    return res.render("students/show", { student });
-};
-
-// create
-exports.create = function (req, res) {
-    return res.render('students/create');
-};
-
-// post
-exports.post = function (req, res) {
-    const keys = Object.keys(req.body);
+module.exports = {
+    index(req, res) {
+        return res.render("students/index");
+    },
+    create(req, res) {
+        return res.render('students/create');
+    },
+    post(req, res) {
+        const keys = Object.keys(req.body);
 
     for (key of keys) {
         if (req.body[key] === "") {
@@ -92,11 +64,28 @@ exports.post = function (req, res) {
 
         return res.redirect(`/students/${id}`);
     });
-};
+    },
+    show(req, res) {
+        const { id } = req.params;
 
-// edit
-exports.edit = function (req, res) {
-    const { id } = req.params;
+        const foundStudent = data.students.find(function(student){
+            return student.id == id
+        });   
+    
+        if (!foundStudent) {
+            return res.send("Instrutor não encontrado");
+        }
+    
+        const student = {
+            ...foundStudent,
+            birth: date(foundStudent.birth).birthDay,
+            created_at: date(foundStudent.created_at).created,
+        }
+    
+        return res.render("students/show", { student });
+    },
+    edit(req, res) {
+        const { id } = req.params;
 
     const foundStudent = data.students.find(function(student){
         return student.id == id
@@ -112,11 +101,9 @@ exports.edit = function (req, res) {
     }
 
     return res.render('students/edit', { student });
-};
-
-// put
-exports.put = function (req, res) {
-    const { id } = req.body;
+    },
+    put(req, res) {
+        const { id } = req.body;
     let index = 0;
 
     const foundStudent = data.students.find(function(student, foundIndex){
@@ -145,21 +132,20 @@ exports.put = function (req, res) {
 
         return res.redirect(`/students/${id}`)
     });
-};
+    },
+    delete(req, res) {
+        const { id } = req.body;
 
-// delete
-exports.delete = function (req, res) {
-    const { id } = req.body;
-
-    const filteredStudents = data.students.filter(function(student){
-        return student.id != id;
-    });
-
-    data.students = filteredStudents;
-
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
-        if (err) return res.send("Write file error");
-
-        return res.redirect('/students');
-    });
-};
+        const filteredStudents = data.students.filter(function(student){
+            return student.id != id;
+        });
+    
+        data.students = filteredStudents;
+    
+        fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+            if (err) return res.send("Write file error");
+    
+            return res.redirect('/students');
+        });
+    }
+}
