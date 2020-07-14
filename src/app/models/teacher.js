@@ -4,7 +4,7 @@ const { age, date } = require('../../lib/utils');
 module.exports = {
     all(callback) {
         db.query(`SELECT * FROM teachers`, function(err, results) {
-            if(err) return res.send("Database Error!");
+            if(err) throw `"Database Error!" ${err}`;
 
             callback(results.rows);
         });
@@ -27,13 +27,13 @@ module.exports = {
             data.avatar_url,
             data.name,
             data.gender,
-            [].concat(data.actings),
+            data.actings,
             date(data.birth).iso,
             date(Date.now()).iso,
         ]
 
         db.query(query, values, function(err, results) {
-            if(err) return res.send("Database Error!");
+            if(err) throw `"Database Error!" ${err}`;
 
             callback(results.rows[0]);
         });
@@ -44,7 +44,7 @@ module.exports = {
             SELECT *
             FROM teachers
             WHERE id = $1`, [id], function(err, results) {
-                if(err) return console.log(err);
+                if(err) `"Database Error!" ${err}`;
 
                 callback(results.rows[0]);
         })
@@ -66,12 +66,11 @@ module.exports = {
             data.name,
             date(data.birth).iso,
             data.gender,
-            [].concat(data.actings),
             data.id
         ]
 
         db.query(query, values, function(err, results) {
-            if(err) return res.send("Database Error!");
+            if(err) `"Database Error!" ${err}`;
 
             callback();
         });
