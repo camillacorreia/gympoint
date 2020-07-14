@@ -38,6 +38,7 @@ module.exports = {
 
             teacher.age = age(teacher.birth);
             teacher.created_at = date(teacher.created_at).created;
+            teacher.actings = (teacher.actings).split(",");
 
             return res.render("teachers/show", { teacher });
         });
@@ -68,6 +69,8 @@ module.exports = {
         });
     },
     delete(req, res) {
-
+        Teacher.delete(req.body.id, function() {
+            return res.redirect(`/teachers`);
+        });
     }
 }

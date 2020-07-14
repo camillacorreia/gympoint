@@ -29,9 +29,9 @@
             <div class="item">
                 <div>Acompanhamento</div>
                 <div>
-                    
-                    <span>{{ teacher.actings }}</span>
-                    
+                    {% for acting in teacher.actings  %}
+                    <span>{{ acting }}</span>
+                    {% endfor %}
                 </div>
             </div>
 

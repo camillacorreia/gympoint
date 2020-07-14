@@ -14,7 +14,8 @@ server.set('view engine', 'njk');
 
 nunjunks.configure('src/app/views', {
     express: server,
-    noCache: true
+    noCache: true,
+    autoescape: false
 });
 
 server.listen(5002);
