@@ -44,9 +44,36 @@ module.exports = {
             SELECT *
             FROM teachers
             WHERE id = $1`, [id], function(err, results) {
-                if(err) return res.send("Database Error!");
+                if(err) return console.log(err);
 
                 callback(results.rows[0]);
         })
+    },
+
+    update(data, callback) {
+        const query = `
+            UPDATE teachers SET
+            avatar_url=($1),
+            name=($2),
+            birth=($3),
+            gender=($4),
+            actings=($5)
+        WHERE id = $6
+        `
+
+        const values = [
+            data.avatar_url,
+            data.name,
+            date(data.birth).iso,
+            data.gender,
+            [].concat(data.actings),
+            data.id
+        ]
+
+        db.query(query, values, function(err, results) {
+            if(err) return res.send("Database Error!");
+
+            callback();
+        });
     }
 }

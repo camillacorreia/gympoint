@@ -32,6 +32,7 @@ module.exports = {
 
     },
     show(req, res) {
+
         Teacher.find(req.params.id, function(teacher){
             if (!teacher) return res.send("Instrutor não encontrado!")
 
@@ -44,9 +45,27 @@ module.exports = {
     },
     edit(req, res) {
 
+        Teacher.find(req.params.id, function(teacher){
+            if (!teacher) return res.send("Instrutor não encontrado!")
+
+            teacher.birth = date(teacher.birth).iso;
+
+            return res.render("teachers/edit", { teacher });
+        });
+
     },
     put(req, res) {
+        const keys = Object.keys(req.body);
 
+        for (key of keys) {
+            if (req.body[key] === "") {
+                return res.send('Por favor, preencha o campo')
+            }
+        }
+
+        Teacher.update(req.body, function() {
+            return res.redirect(`/teachers/${req.body.id}`);
+        });
     },
     delete(req, res) {
 
