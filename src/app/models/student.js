@@ -27,8 +27,9 @@ module.exports = {
                 height,
                 plan,
                 register,
+                teacher_id,
                 created_at
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
             RETURNING id
         `
 
@@ -45,6 +46,7 @@ module.exports = {
             data.height,
             data.plan,
             data.register,
+            data.teacher,
             date(Date.now()).iso,
         ]
 
@@ -57,9 +59,10 @@ module.exports = {
 
     find(id, callback) {
         db.query(`
-            SELECT *
+            SELECT students.*, teachers.name AS teacher_name
             FROM students
-            WHERE id = $1`, [id], function(err, results) {
+            LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+            WHERE students.id = $1`, [id], function(err, results) {
                 if(err) `Database Error! ${err}`;
 
                 callback(results.rows[0]);
@@ -80,8 +83,9 @@ module.exports = {
             weight=($9),
             height=($10),
             plan=($11),
-            register=($12)
-        WHERE id = $13
+            register=($12),
+            teacher_id=($13)
+        WHERE id = $14
         `
 
         const values = [
@@ -97,6 +101,7 @@ module.exports = {
             data.height,
             data.plan,
             data.register,
+            data.teacher,
             data.id
         ]
 
@@ -112,6 +117,13 @@ module.exports = {
             if(err) `Database Error! ${err}`;
 
             return callback();
+        });
+    },
+    teachersSelectOptions(callback) {
+        db.query(`SELECT name, id FROM teachers`, function(err, results) {
+            if(err) `Database Error! ${err}`;
+
+            callback(results.rows);
         });
     }
 }

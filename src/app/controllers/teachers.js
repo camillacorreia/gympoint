@@ -1,5 +1,6 @@
 const Teacher = require('../models/teacher');
 const { age, date } = require('../../lib/utils');
+const student = require('../models/student');
 
 module.exports = {
     index(req, res){
@@ -12,7 +13,7 @@ module.exports = {
 
     },
     create(req, res) {
-
+        
         return res.render('teachers/create');
 
     },
