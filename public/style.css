@@ -376,7 +376,7 @@ td:last-child {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .table-container .header a {     
@@ -431,7 +431,6 @@ td:last-child {
 }
 
 .table-container .header {
-    margin: 0;
     align-self: start;
 }
 
