@@ -128,7 +128,7 @@ module.exports = {
         query = `
             SELECT teachers.*,${totalQuery}, count(students) AS total_members
             FROM teachers
-            LEFT JOIN students ON (teachers.is = students.teacher_id)
+            LEFT JOIN students ON (teachers.id = students.teacher_id)
             ${filterQuery}
             GROUP BY teachers.id 
             ORDER BY name ASC
