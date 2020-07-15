@@ -3,21 +3,36 @@ const { age, date } = require('../../lib/utils');
 const student = require('../models/student');
 
 module.exports = {
-    index(req, res){
+    index(req, res) {
+        let { filter, page, limit } = req.query;
 
-        const { filter } = req.query;
+        page = page || 1
+        limit = limit || 5
+        let offset = limit * (page - 1)
 
-        if ( filter ) {
-            Teacher.findBy(filter, function(teachers) {
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
                 return res.render("teachers/index", { teachers, filter });
-            })
-        } else {
-            Teacher.all(function(teachers) {
-
-                return res.render("teachers/index", { teachers });
-    
-            });
+            }
         }
+
+        Teacher.paginate(params);
+
+        //if ( filter ) {
+        //    Teacher.findBy(filter, function(teachers) {
+        //        return res.render("teachers/index", { teachers, filter });
+        //    })
+        //} else {
+        //    Teacher.all(function(teachers) {
+
+         //       return res.render("teachers/index", { teachers });
+    
+        //    });
+        //}
 
     },
     create(req, res) {

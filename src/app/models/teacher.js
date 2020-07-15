@@ -49,7 +49,7 @@ module.exports = {
             SELECT *
             FROM teachers
             WHERE id = $1`, [id], function(err, results) {
-                if(err) `Database Error! ${err}`;
+                if(err) throw `Database Error! ${err}`;
 
                 callback(results.rows[0]);
         })
@@ -90,7 +90,7 @@ module.exports = {
         ]
 
         db.query(query, values, function(err, results) {
-            if(err) `Database Error! ${err}`;
+            if(err) throw `Database Error! ${err}`;
 
             callback();
         });
@@ -98,9 +98,37 @@ module.exports = {
 
     delete(id, callback) {
         db.query(`DELETE FROM teachers WHERE id = $1`, [id], function(err, results) {
-            if(err) `Database Error! ${err}`;
+            if(err) throw `Database Error! ${err}`;
 
             return callback();
+        });
+    },
+
+    paginate(params) {
+        const { filter, limit, offset, callback } = params;
+
+        let query = `
+        SELECT teachers.*, count(students) as total_members
+        FROM teachers
+        LEFT JOIN students ON (teachers.id = students.teacher_id)
+        `
+
+        if ( filter ) {
+            query = `${query}
+            WHERE teachers.name ILIKE '%${filter}%'
+            `
+        }
+
+        query = `${query}
+        GROUP BY teachers.id 
+        ORDER BY name ASC
+        LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if(err) throw `Database Error! ${err}`;
+
+            callback(results.rows);
         });
     }
 }
