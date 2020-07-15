@@ -5,11 +5,19 @@ const db = require('../../config/db');
 module.exports = {
     index(req, res){
 
-        Student.all(function(students) {
+        const { filter } = req.query;
 
-            return res.render("students/index", { students });
+        if ( filter ) {
+            Student.findBy(filter, function(students) {
+                return res.render("students/index", { students, filter });
+            })
+        } else {
+            Student.all(function(students) {
 
-        })
+                return res.render("students/index", { students });
+    
+            });
+        }
 
     },
     create(req, res) {
