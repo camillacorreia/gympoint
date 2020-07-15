@@ -429,3 +429,36 @@ td:last-child {
     padding-left: 10px;
     width: 250px;
 }
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 40px 0px 0px 0px;
+    align-self: center;
+    justify-self: center;
+}
+
+.pagination span {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a {
+    background: var(--primary-color);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 16px;
+    padding-bottom:  30px;
+}
+
+.pagination a:hover {
+    opacity: 0.9;
+}
