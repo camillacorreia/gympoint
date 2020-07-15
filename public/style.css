@@ -371,3 +371,60 @@ td:last-child {
     font-size: 18px;
     color: #555;
 }
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {     
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid var(--primary-color);
+    margin: 0;
+    width: 120px;
+}
+
+.table-container .header button {
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    margin: 0;
+    width: 120px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.table-container .header button:hover {
+    opacity: 0.9;
+    outline: none;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+}
+
+.table-container .header input[type="text"] {
+    outline: none;
+    border: 1px solid #eee;
+    height: 42px;
+    font-size: 16px;
+    padding-left: 10px;
+}
