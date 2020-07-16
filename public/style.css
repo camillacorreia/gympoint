@@ -461,3 +461,7 @@ td:last-child {
 .pagination a:hover {
     opacity: 0.9;
 }
+
+.pagination a:active {
+    background:  black;
+}
