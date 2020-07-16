@@ -3,22 +3,29 @@ const { age, date } = require('../../lib/utils');
 const db = require('../../config/db');
 
 module.exports = {
-    index(req, res){
+    index(req, res) {
+        let { filter, page, limit } = req.query;
 
-        const { filter } = req.query;
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
 
-        if ( filter ) {
-            Student.findBy(filter, function(students) {
-                return res.render("students/index", { students, filter });
-            })
-        } else {
-            Student.all(function(students) {
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
 
-                return res.render("students/index", { students });
-    
-            });
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+                return res.render("students/index", { students, pagination, filter });
+            }
         }
 
+        Student.paginate(params);
     },
     create(req, res) {
 
